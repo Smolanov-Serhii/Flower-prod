@@ -1,0 +1,58 @@
+.main-features {
+  opacity: .9;
+  padding: 5rem 0;
+  @include media('>=desktop-wide') {
+    padding: 10rem 0 8.5rem;
+  }
+
+  &__icon {
+    width: fit-content;
+    margin-bottom: .9rem;
+    min-height: 5rem;
+    object-fit: contain;
+    @include media('>=desktop') {
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem -3rem;
+    @include media('>=desktop-wide') {
+      margin-bottom: -6.2rem;
+    }
+  }
+
+  &__item {
+    width: calc(100%/2 - 2rem);
+    margin: 0 1rem 3rem;
+    @include media('>=tablet') {
+      width: calc(100%/3 - 2rem);
+      margin: 0 1rem 3rem;
+    }
+    @include media('>=desktop-wide') {
+      margin-bottom: 6.2rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 1.1;
+    margin-bottom: .5rem;
+    @include media('>=tablet') {
+      font-size: 1.8rem;
+    }
+    @include media('>=desktop') {
+      font-size: 2rem;
+      margin-bottom: 1.1rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    @include media('>=desktop') {
+      font-size: 1.4rem;
+    }
+  }
+}

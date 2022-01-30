@@ -1,0 +1,106 @@
+#tabs {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: 0px;
+}
+
+#tabs .tab_content {
+    display: none;
+}
+
+.tab_content .image {
+    max-width: 400px;
+    display: block;
+    margin: 10px 0 0 0;
+}
+
+.tab_content .form-table td fieldset label {
+    display: inline-block;
+    margin: 0 10px 0 0 !important;
+}
+
+.column-popup_id {
+    width: 4%;
+}
+
+.CodeMirror-cursor {
+    border-left: 1px solid white!important;
+}
+
+#chartdiv {
+    width: 99%;
+    height: 620px;
+    border: 1px solid #ddd;
+}
+
+#info {
+    width: 99%;
+    border: 1px solid #ddd;
+    margin: 10px auto;
+    padding: 5px 8px;
+}
+
+.date-log{
+    font-style: italic;
+    color: #0073aa;
+}
+
+.logs-wrap{
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.logs-wrap b{
+    margin-right: 0.3rem;
+}
+
+[name^='extra_content']{
+    color: #000 !important;
+}
+
+.button-group {
+    width: 100%;
+}
+
+.question-block {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 5px solid #c3c3c3;
+}
+
+.services_meta label {
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+.hide {
+    display: none !important;
+}
+
+.repeater {
+    position: relative;
+}
+
+.repeater-example {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.repeater-buttons {
+    margin-top: 10px;
+}
+
+.repeater-items .row:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.repeater-remove {
+    text-align: right;
+}
+
+#howto_block .repeater {
+    margin-bottom: 20px;
+}

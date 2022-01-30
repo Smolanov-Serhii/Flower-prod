@@ -1,0 +1,438 @@
+.basket {
+  color: $c-black;
+  padding: 5rem 0;
+  @include media('>=desktop-wide') {
+    padding: 5rem 0 10rem;
+  }
+
+  &__container {
+    padding: 0;
+    @include max-width(127rem);
+    @include media('>=desktop') {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__content {
+    @include media('>=desktop') {
+      box-shadow: 0 2.5rem 9rem rgba($c-black, 0.1);
+    }
+  }
+
+  &__item {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid rgba($c-black, .1);
+    position: relative;
+    @include media('<tablet-small') {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+    @include media('>=tablet-small') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include media('>=tablet') {
+      flex-wrap: nowrap;
+    }
+    @include media('>=desktop') {
+      padding: 2rem 2.5rem;
+    }
+
+    .basket__price {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      @include media('<tablet-small') {
+        flex-grow: 1;
+        text-align: right;
+      }
+      @include media('>=tablet-small') {
+        width: 30%;
+        justify-content: space-between;
+      }
+      @include media('>=tablet') {
+        margin-left: auto;
+        max-width: 35rem;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    margin-bottom: .3em;
+    @include media('>=desktop') {
+      font-size: 2rem;
+    }
+    @include media('>=desktop-wide') {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__delete {
+    @include size(2.1rem);
+    background-color: #e8e8e8;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #e8e8e8;
+    transition: background-color $animation-speed;
+    margin-left: 1rem;
+    align-self: center;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @include media('<tablet-small') {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    @include media('>=phone-wide') {
+      @include size(2.5rem);
+    }
+    @include media('>=desktop') {
+      @include size(4rem);
+      margin-left: 3.2rem;
+    }
+
+    &::after, &::before {
+      content: '';
+      display: block;
+      @include size(60%, 2px);
+      background-color: rgba($c-black, .5);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__img {
+    @include size(100%);
+    object-fit: cover;
+
+    &-wrap {
+      @include size(8rem);
+      border: 1px solid $c-grey;
+      margin-right: 1.4rem;
+      align-self: center;
+      @include media('>=desktop') {
+        margin-right: 3.4rem;
+      }
+      @include media('>=desktop-wide') {
+        @include size(11rem);
+      }
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__info {
+    font-size: 1.2rem;
+    opacity: .5;
+    @include media('>=desktop') {
+      font-size: 1.4rem;
+    }
+    @include media('>=desktop-wide') {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    opacity: .5;
+    @include media('>=desktop') {
+      font-size: 2rem;
+    }
+    @include media('>=desktop-wide') {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__total {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 1em;
+    @include media('<tablet') {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+    @include media('<tablet-small') {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    @include media('>=tablet-small') {
+      flex-grow: 1;
+      max-width: 45%;
+    }
+  }
+
+  &__list {
+    counter-reset: section;
+  }
+
+  &__textarea {
+    display: block;
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto 1em;
+    border: 1px solid $c-brown;
+    min-height: 10rem;
+    padding: 1rem;
+    height: 25vh;
+    max-height: 25rem;
+    outline: none;
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &::placeholder {
+      color: $c-brown;
+    }
+  }
+
+  &__number {
+    display: none;
+    font-weight: 700;
+    width: 9%;
+    @include media('>=tablet-small') {
+      display: block;
+    }
+
+    &::before {
+      counter-increment: section;
+      content: counter(section);
+    }
+  }
+
+  &__bottom {
+    padding: 1rem 1.5rem 2.5rem;
+  }
+
+  &__price {
+    font-size: 2.2rem;
+    font-weight: 300;
+    @include media('>=tablet') {
+      font-size: 3rem;
+      white-space: nowrap;
+    }
+    @include media('>=desktop') {
+      font-size: 3.5rem;
+    }
+    @include media('>=desktop-wide') {
+      font-size: 4.8rem;
+    }
+
+    &-ppc {
+      font-size: 1.4rem;
+      font-weight: 700;
+      @include media('>=desktop') {
+        font-size: 1.6rem;
+      }
+
+      &--mobi {
+        @include media('>=tablet-small') {
+          display: none;
+        }
+      }
+    }
+
+    &--small {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__submit {
+    margin-bottom: 1em;
+    @include media('>desktop-wide') {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__continue {
+    font-size: 1.8rem;
+    display: block;
+    font-weight: 700;
+    text-align: center;
+    opacity: .5;
+    transition: opacity $animation-speed;
+    @include media('>=desktop-wide') {
+      font-size: 2.4rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__action {
+    max-width: 27rem;
+    margin: 0 auto 4em;
+    @include media('<phone-wide') {
+      margin: 0 auto 2rem;
+    }
+    @include media('>=phone-wide') {
+      width: 50%;
+    }
+    @include media('>=tablet') {
+      width: 100%;
+    }
+    @include media('>=desktop-wide') {
+      max-width: 33.8rem;
+    }
+  }
+
+  &__counter {
+    align-self: center;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    @include media('<tablet-small') {
+      margin-bottom: 1rem;
+      margin-left: 0;
+    }
+    @include media('>=tablet') {
+      max-width: 14.2rem;
+    }
+
+    input {
+      @include media('>=tablet') {
+        max-width: 6.2rem;
+      }
+    }
+
+  }
+
+  &-header {
+    font-weight: 700;
+    color: $c-grey02;
+    display: none;
+    padding: 1.5rem;
+    @include media('>=tablet-small') {
+      display: flex;
+      align-items: center;
+    }
+    @include media('>=desktop') {
+      padding-top: 1.5rem;
+    }
+
+    &__numb {
+      width: 3%;
+      text-align: center;
+    }
+
+    &__name {
+      flex-grow: 1;
+    }
+
+    &__counter {
+      width: 100%;
+      max-width: 7.4rem;
+      text-align: center;
+      @include media('>=tablet') {
+        max-width: 14.2rem;
+      }
+    }
+
+    &__pcc {
+      width: 15%;
+      text-align: center;
+    }
+
+    &__price {
+      width: 20%;
+      text-align: center;
+      margin-right: 3.5rem;
+      @include media('>=desktop') {
+        margin-right: 7.2rem;
+      }
+    }
+  }
+
+  &-descr {
+    @include media('>=tablet') {
+      display: flex;
+      align-items: center;
+      margin: 0 -1rem;
+    }
+    @include media('>=desktop') {
+     padding: 0 1.5rem;
+    }
+
+    &__title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: .5em;
+      @include media('>=tablet') {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-bottom: .4em;
+      }
+      &::before {
+        content: '';
+        @include size(.8rem);
+        background-color: $c-brown;
+        margin-right: .8em;
+        margin-top: .4em;
+        flex-shrink: 0;
+        border-radius: 50%;
+      }
+    }
+
+    &__col {
+      @include media('<tablet') {
+       &:not(:last-child) {
+         margin-bottom: 1em;
+       }
+      }
+      @include media('>=tablet') {
+        width: 50%;
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  &-quote {
+    color: $c-brown;
+    border: 1px solid $c-brown;
+    padding: 1rem;
+    @include media('>=desktop') {
+     padding: 1.5rem 2.5rem;
+    }
+
+    &__text {
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}

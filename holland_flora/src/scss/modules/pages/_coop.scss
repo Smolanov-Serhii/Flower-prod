@@ -1,0 +1,297 @@
+.coop {
+  padding: 5rem 0;
+  @include media(">=desktop-wide") {
+    padding: 8rem 0 16rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    @include media(">=tablet") {
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
+    }
+    @include media(">=desktop") {
+      font-size: 3rem;
+    }
+    @include media(">=desktop-wide") {
+      font-size: 3.6rem;
+    }
+  }
+
+  &__descr {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    @include media(">=desktop") {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+    @include media(">=desktop-wide") {
+      font-size: 2.4rem;
+      margin-bottom: 7rem;
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 2em;
+    @include media(">=desktop") {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include media(">=desktop-wide") {
+      align-items: flex-start;
+    }
+  }
+
+  &__col {
+    @include media("<desktop") {
+      margin-bottom: 4.5rem;
+    }
+    @include media(">=desktop") {
+      width: 50%;
+      margin-right: 2rem;
+      max-width: 58.9rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 1em;
+    color: $c-black;
+    @include media(">=desktop") {
+      font-size: 2rem;
+    }
+    @include media(">=desktop-wide") {
+      font-size: 2.4rem;
+    }
+  }
+
+  &-steps {
+    counter-reset: section;
+    margin-bottom: 5rem;
+    @include media(">=tablet") {
+      display: flex;
+      align-items: flex-start;
+      margin: 0 -1rem 5rem;
+    }
+    @include media(">=desktop") {
+      margin-bottom: 10rem;
+    }
+    @include media(">=desktop-wide") {
+      margin-bottom: 15rem;
+    }
+
+    &__item {
+      margin-bottom: 2rem;
+      @include media(">=tablet") {
+        width: calc(100% / 3 - 2rem);
+        margin: 0 1rem;
+      }
+
+      @include media(">=desktop") {
+        &:not(:last-child) {
+          .coop-steps__title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-line {
+              content: "";
+              display: block;
+              @include size(25%, 2.2rem);
+              object-fit: contain;
+              flex-grow: 1;
+              margin-left: 1rem;
+              min-width: 10%;
+              @include media(">=desktop-wide") {
+                @include size(30%, 2.2rem);
+              }
+            }
+          }
+        }
+      }
+
+      &::before {
+        counter-increment: section;
+        content: attr(data-numb-name) " " counter(section);
+        font-size: 2.3rem;
+        font-weight: 700;
+        color: $c-brown03;
+        @include media(">=tablet") {
+          font-size: 3rem;
+        }
+        @include media(">=desktop") {
+          font-size: 3.8rem;
+        }
+        @include media(">=desktop-wide") {
+          font-size: 5rem;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      margin-bottom: 0.7em;
+      @include media(">=desktop") {
+        font-size: 2rem;
+      }
+      @include media(">=desktop-wide") {
+        font-size: 2.4rem;
+      }
+
+      img {
+        display: none;
+        @include media('>=desktop') {
+          display: block;
+        }
+      }
+    }
+
+    &__text {
+      font-size: 1.2rem;
+      @include media(">=tablet") {
+        font-size: 1.4rem;
+        max-width: 35rem;
+      }
+      @include media(">=desktop-wide") {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &-list {
+    font-size: 1.2rem;
+    @include media(">=tablet") {
+      font-size: 1.4rem;
+    }
+    @include media(">=desktop-wide") {
+      font-size: 1.6rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      &::before {
+        content: "";
+        @include size(0.5rem);
+        border-radius: 50%;
+        background-color: $c-brown04;
+        margin-right: 1rem;
+        margin-top: 0.15em;
+        flex-shrink: 0;
+        @include media(">=desktop") {
+          @include size(1rem);
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+  &-box {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    background-color: #2c2c2c;
+    color: $c-white;
+    @include media("<desktop") {
+      max-width: 69rem;
+      margin: 0 auto;
+    }
+    @include media(">=desktop") {
+      font-size: 2rem;
+      width: 50%;
+      max-width: 71rem;
+    }
+    @include media(">=desktop-wide") {
+      font-size: 2.4rem;
+    }
+
+    &__top {
+      border-bottom: 1px solid rgba($c-white, 0.1);
+      padding: 3rem 2rem;
+      @include media(">=desktop-wide") {
+        padding: 5.5rem 2rem;
+      }
+    }
+
+    &__bottom {
+      padding: 3rem 2rem;
+      @include media(">=desktop-wide") {
+        padding: 5rem 2rem 8rem;
+      }
+    }
+
+    &__btn {
+      font-size: 2.4rem;
+      max-width: 100%;
+    }
+
+    &__text {
+      color: $c-brown03;
+      margin-bottom: 3rem;
+      @include media(">=desktop-wide") {
+        margin-bottom: 6rem;
+      }
+    }
+
+    &__wrap {
+      max-width: 43.8rem;
+      margin: 0 auto;
+    }
+  }
+
+  &-link {
+    color: #ce8e59;
+    font-size: 18px;
+  }
+
+  &-offer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: $c-brown;
+    border: 2px solid rgba($c-brown, 0.5);
+    max-width: 85rem;
+    margin: 0 auto;
+    padding: 1.2rem;
+    @include media(">=tablet") {
+      padding: 2rem 3rem;
+      flex-direction: row;
+    }
+
+    &__title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      @include media(">=tablet") {
+        font-size: 2rem;
+      }
+      @include media(">=desktop") {
+        font-size: 2.4rem;
+      }
+    }
+
+    &__link {
+      border-bottom: 1px solid currentColor;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+
+    &__icon {
+      @include size(6rem);
+      margin-right: 2rem;
+      fill: $c-dark;
+      flex-shrink: 0;
+      @include media(">=desktop") {
+        @include size(10rem);
+      }
+    }
+  }
+}

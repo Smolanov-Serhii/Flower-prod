@@ -1,0 +1,35 @@
+:root {
+  --scrollWidth: 0;
+  --containerPadding: 1.5rem;
+  --fontBase: 1.2rem;
+  @include media('>=tablet') {
+    --fontBase: 1.4rem;
+    --containerPadding: 2.5rem;
+  }
+  @include media('>=desktop') {
+    --fontBase: 1.6rem;
+  }
+}
+
+$font-Muller: 'Muller', sans-serif;
+$font-GillSans: 'GillSans', sans-serif;
+$font-GillSansPro: 'GillSansPro', sans-serif;
+
+/*___CONFIG___*/
+$font-base: $font-Muller;
+$base-font-size: var(--fontBase);
+$font-weight: 400;
+$color: $c-dark;
+$bgColor: $c-white;
+$line-height: 1.35;
+$content-size: 144rem;
+$containerPadding: var(--containerPadding);
+
+
+// Animations
+$animation-speed: .4s ease;
+
+// Urls
+$imgGen: 'images/common/';
+$imgCont: 'images/content/';
+$fontsPath: '/fonts/';

@@ -1,0 +1,40 @@
+.main-about {
+  background-color: #f2f2f2;
+  padding: 5rem 0;
+  @include media('>=tablet') {
+    padding: 5.7rem 0;
+  }
+
+
+  &__container {
+    @include media('>=desktop') {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    @include media('<desktop') {
+      margin-bottom: 3.2rem;
+    }
+    @include media('>=desktop') {
+      max-width: 44.3rem;
+      margin-right: 1rem;
+    }
+    @include media('>=desktop-wide') {
+      margin-right: 4rem;
+    }
+  }
+
+  &__img {
+    max-width: 95.2rem;
+    @include media('>=desktop') {
+      width: 50%;
+      flex-grow: 1;
+    }
+  }
+
+  &__text {
+    line-height: 1.7;
+  }
+}

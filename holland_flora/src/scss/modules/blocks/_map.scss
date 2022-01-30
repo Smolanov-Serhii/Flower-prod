@@ -1,0 +1,138 @@
+.map {
+  width: 100%;
+
+  &__container {
+    padding-top: 23rem;
+    position: relative;
+    @include media('>=desktop') {
+      padding-top: 19rem;
+    }
+  }
+
+  &__frame {
+    width: 100%;
+    overflow: hidden;
+    min-height: 37rem;
+    height: 60vh;
+    max-height: 80rem;
+    @include media('>=desktop-wide') {
+     height: 80vh;
+    }
+
+    & > * {
+      display: block;
+      @include size(100%);
+    }
+  }
+
+  &-sticker {
+    width: calc(100% - 3rem);
+    max-width: 40rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $c-white;
+    border: 1px dashed rgba($c-brown, .5);
+    padding: 2rem;
+    opacity: .9;
+    box-shadow: 0 25px 90px rgba(0, 0, 0, 0.1);
+    outline: 5px solid $c-white;
+    @include media('>=tablet') {
+      left: 2.5rem;
+      transform: translateX(0);
+    }
+    @include media('>=desktop') {
+      max-width: 47rem;
+    }
+    @include media('>=desktop-wide') {
+      padding: 5rem;
+      max-width: 59rem;
+    }
+
+    &__title.map-sticker__title {
+      margin-bottom: .4em;
+    }
+
+    &__descr {
+      font-size: 1.2rem;
+      padding-bottom: 2em;
+      margin-bottom: 2em;
+      border-bottom: 1px solid rgba($c-black, .1);
+      @include media('>=tablet') {
+        font-size: 1.4rem;
+      }
+      @include media('>=desktop') {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__contacts {
+      font-size: 2.3rem;
+      line-height: 1.5;
+      width: fit-content;
+      margin-bottom: .4em;
+      padding-bottom: 0.7em;
+      border-bottom: 1px solid rgba($c-black, .1);
+
+      @include media('>=desktop') {
+        font-size: 3rem;
+      }
+      @include media('>=desktop-extra') {
+        font-size: 4.8rem;
+      }
+    }
+
+    &__link {
+      display: block;
+      width: fit-content;
+      transition: color $animation-speed;
+
+      &:hover {
+        color: $c-brown;
+      }
+    }
+
+    &__adress {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      @include media('>=desktop') {
+        font-size: 1.4rem
+      }
+    }
+
+    &__icon {
+      @include size(2.2rem);
+      margin-right: 1rem;
+      fill: #e5a876;
+    }
+  }
+
+  &-socials {
+    display: flex;
+    align-items: center;
+    font-size: 2.3rem;
+    margin: .2em auto;
+    width: fit-content;
+    @include media('>=desktop') {
+      font-size: 3rem;
+    }
+    @include media('>=desktop-extra') {
+      font-size: 4.8rem;
+    }
+
+    &__icon {
+      @include size(3rem);
+      @include media('>=desktop') {
+       @include size(4rem)
+      }
+      @include media('>=desktop-wide') {
+        @include size(5rem);
+      }
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

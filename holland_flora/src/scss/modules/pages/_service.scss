@@ -1,0 +1,63 @@
+.service {
+  padding: 5rem 0;
+  padding-bottom: 0 !important;
+  @include media('>=desktop') {
+    padding: 9rem 0 0;
+  }
+
+  &__title {
+    color: #2c2c2c;
+    margin-bottom: .5em;
+  }
+
+  &__text {
+    margin-bottom: 1.2em;
+    @include media('<tablet') {
+     br {
+       display: none;
+     }
+    }
+  }
+
+  &__content {
+    @include max-width(130rem);
+    @include media('>=tablet') {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -1rem;
+    }
+  }
+
+  &__col {
+    @include media('>=tablet') {
+      width: calc(50% - 2rem);
+      margin: 0 1rem;
+      max-width: 53rem;
+    }
+  }
+
+  &-quote {
+    color: $c-brown04;
+    padding: 1rem 1.5rem;
+    border: 1px solid $c-brown04;
+    margin-bottom: 2em;
+    @include media('>=tablet') {
+      padding: 2rem 2.5rem;
+    }
+
+    &__text {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .map {
+    @include media('>=desktop') {
+      margin-top: -5em;
+    }
+  }
+
+}

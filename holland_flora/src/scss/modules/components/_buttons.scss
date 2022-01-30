@@ -1,0 +1,52 @@
+.btn {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  line-height: 4.5rem;
+  border: 1px solid $c-brown;
+  text-align: center;
+  padding: 0 1rem;
+  transition: background-color $animation-speed, color $animation-speed;
+  @include media(">=tablet") {
+    line-height: 5.2rem;
+  }
+  @include media(">=desktop-wide") {
+    line-height: 6.9rem;
+  }
+
+  &--fill {
+    @extend .btn;
+    background-color: $c-brown;
+    color: $c-white;
+
+    &:hover {
+      background-color: transparent;
+      color: $c-brown;
+    }
+  }
+
+  &--border {
+    @extend .btn;
+
+    color: $c-brown;
+
+    &:hover {
+      background-color: $c-brown;
+      color: $c-white;
+    }
+  }
+
+  &--gradient {
+    @extend .btn;
+    border: none;
+    background-image: linear-gradient(to top, #bc7942 0%, #ebaf7e 100%);
+    color: $c-white;
+    max-width: 25.5rem;
+  }
+}
+
+.red {
+  color: red;
+  font-size: 19px;
+}

@@ -1,0 +1,20 @@
+/* Colors */
+$c-black: #000000;
+$c-dark: #282828;
+$c-dark02: #272727;
+$c-white: #FFFFFF;
+$c-grey: #dddddd;
+$c-grey02: #898989;
+$c-brown: #ce8e59;
+$c-brown02: #be9364;
+$c-brown03: #cc9465;
+$c-brown04: #c17f48;
+$c-green: #2bc48a;
+
+.c {
+
+  &-brown {
+    color: $c-brown;
+  }
+
+}

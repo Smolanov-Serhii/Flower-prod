@@ -1,0 +1,148 @@
+.faq {
+  padding: 5rem 0;
+  overflow: hidden;
+  @include media('>=desktop-wide') {
+    padding-bottom: 11rem;
+  }
+
+  &__list {
+    background-color: $c-white;
+    box-shadow: 0 0 8.4rem rgba(189, 189, 189, 0.52);
+    padding: 1rem 0;
+  }
+
+  &__bg {
+
+    &-wrap {
+      display: none;
+      @include media('>=desktop') {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 70%;
+        max-width: 123rem;
+        max-height: 80%;
+
+        &::before {
+          content: '';
+          @include size(100%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba($c-black, .4);
+        }
+      }
+    }
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    transition: padding-bottom $animation-speed;
+    @include media('>=tablet') {
+      padding: 1.3rem 3.5rem;
+    }
+    @include media('>=desktop') {
+      font-size: 2rem;
+      padding: 1.8rem 3.5rem;
+    }
+    @include media('>=desktop-wide') {
+      font-size: 2.4rem;
+      padding: 2.7rem 3.5rem;
+    }
+    @include media('>=desktop-extra') {
+      padding: 3.2rem 5.5rem;
+    }
+
+    &:hover {
+      .faq__subtitle {
+        color: $c-brown;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: inherit;
+    transition: color $animation-speed;
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(#676666, .1);
+    }
+
+    &.act {
+      .faq__content {
+        padding-bottom: 3rem;
+      }
+
+      .faq__subtitle {
+        color: $c-brown;
+      }
+
+      .faq__header {
+        padding-bottom: 1rem;
+        @include media('>=tablet') {
+          padding-bottom: 2rem;
+        }
+        @include media('>=desktop') {
+          padding-bottom: 3rem;
+        }
+      }
+
+      .faq__icon::before {
+        transform: translate(-50%, -50%) rotate(90deg) scale(0);
+      }
+    }
+  }
+
+  &__icon {
+    @include size(1.2rem);
+    position: relative;
+    margin-left: 1rem;
+    flex-shrink: 0;
+    margin-top: .2em;
+    @include media('>=tablet') {
+      @include size(1.8rem);
+    }
+
+    &::before, &::after {
+      content: '';
+      @include size(100%, .3rem);
+      background-color: $c-brown;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform $animation-speed;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__content {
+    font-size: 1.2rem;
+    height: 0;
+    transition: all $animation-speed;
+    overflow: hidden;
+    box-sizing: content-box;
+    padding: 0 2rem;
+    @include media('>=tablet') {
+      font-size: 1.4rem;
+      padding: 0 3.5rem;
+    }
+    @include media('>=desktop') {
+      font-size: 1.6rem;
+    }
+    @include media('>=desktop-wide') {
+      padding: 0 5.5rem;
+    }
+  }
+}

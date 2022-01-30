@@ -1,0 +1,151 @@
+.main-advantages {
+  padding: 5rem 0;
+  position: relative;
+  z-index: 2;
+  @include media('>=desktop') {
+    padding: 8.5rem 0 0;
+    margin-bottom: -2.5rem;
+  }
+  @include media('>=desktop-wide') {
+    margin-bottom: -5rem;
+  }
+
+  &-swiper {
+    @include media('<desktop') {
+      margin: 0 -2.5rem;
+      padding: 0 2.5rem;
+    }
+    @include media('<tablet') {
+      margin: 0 -1.5rem;
+      padding: 0 1.5rem;
+    }
+    @include media('>=desktop') {
+      margin: 0 -1rem;
+    }
+    @include media('>=desktop-wide') {
+      margin: 0 -1.8rem;
+    }
+
+    &__wrapper {
+      @include media('<desktop') {
+        margin-bottom: 1.5rem;
+      }
+
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 1em;
+      @include media('>=desktop') {
+        font-size: 2rem;
+        margin-bottom: .8em;
+      }
+      @include media('>=desktop-wide') {
+        font-size: 2.4rem;
+      }
+    }
+
+    &__text {
+      line-height: 1.8;
+    }
+
+    &__content {
+      position: relative;
+      padding: 2rem;
+      @include media('>=desktop-wide') {
+        padding: 5rem 3.5rem;
+      }
+    }
+
+    &__bg {
+      min-height: 39.2rem;
+      height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      @include media('<desktop') {
+        max-width: 55rem;
+        margin: 0 auto;
+      }
+      @include media('>=desktop') {
+        max-height: 58.7rem;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &__slide {
+      @include media('>=desktop') {
+        width: calc(100% / 3 - 2rem);
+        margin: 0 1rem;
+      }
+      @include media('>=desktop-wide') {
+        width: calc(100% / 3 - 3.6rem);
+        margin: 0 1.8rem;
+      }
+
+      &:nth-child(odd) {
+        .main-advantages-swiper__bg {
+          &:before {
+            background-color: rgba($c-white, .1);
+          }
+        }
+
+        .main-advantages-swiper__content {
+          background-color: rgba($c-white, .7);
+        }
+      }
+
+      &:nth-child(even) {
+        .main-advantages-swiper__bg {
+          &:before {
+            background-color: rgba($c-dark, .1);
+          }
+        }
+
+        .main-advantages-swiper__content {
+          background-color: rgba($c-dark, .7);
+          color: $c-white;
+        }
+      }
+    }
+
+    &__pagination {
+      margin: 0 1.2rem;
+
+      .swiper-pagination-bullet {
+        background-color: #b4aeae;
+      }
+    }
+
+    &__btn {
+      flex-shrink: 0;
+      opacity: .8;
+
+      svg {
+        fill: #222121;
+      }
+    }
+
+    &__action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include media('>=desktop') {
+        display: none;
+      }
+    }
+  }
+}

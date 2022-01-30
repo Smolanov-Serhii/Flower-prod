@@ -1,0 +1,120 @@
+.about-company {
+  padding: 5rem 0 0;
+  @include media('>=desktop-wide') {
+    padding-top: 8rem;
+  }
+
+  &__wrap {
+    margin-bottom: 0;
+    @include media('>=desktop') {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1.5em;
+
+    &:last-of-type {
+      @include media('>=desktop-wide') {
+        margin-bottom: 3em;
+      }
+    }
+  }
+
+  &__content {
+    @include media('<desktop') {
+      margin-bottom: 3rem;
+    }
+    @include media('>=desktop') {
+      width: 47%;
+      max-width: 74rem;
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    &-wrap {
+      position: relative;
+      max-width: 40rem;
+      @include media('<desktop') {
+        margin: 0 auto;
+      }
+      @include media('>=desktop') {
+        width: 47%;
+        max-width: 70rem;
+        flex-shrink: 0;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        @include size(18rem, 16rem);
+        background-color: $c-brown;
+        position: absolute;
+        bottom: -2rem;
+        left: -2rem;
+        @include media('>=tablet') {
+          @include size(27rem, 24rem);
+          bottom: -4rem;
+          left: -4rem;
+        }
+        @include media('>=desktop') {
+          @include size(33rem, 30rem);
+        }
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 2.4rem;
+    line-height: 6rem;
+    max-width: 32rem;
+    @include media('<desktop') {
+      margin: 0 auto;
+    }
+  }
+
+  &-list {
+    display: flex;
+    margin: 0 -1rem 2rem;
+    @include media('>=tablet') {
+      margin-bottom: 5rem;
+    }
+    @include media('>=desktop') {
+      margin-bottom: 7rem;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+      line-height: 1;
+      text-align: center;
+      color: rgba($c-black, .9);
+      @include media('>=tablet') {
+        font-size: 1.6rem;
+      }
+      @include media('>=desktop-wide') {
+        font-size: 2.2rem;
+      }
+    }
+
+    &__item {
+      width: calc(100% / 3 - 2rem);
+      margin: 0 1rem;
+    }
+
+    &__icon {
+      max-width: 6rem;
+      min-height: 10rem;
+      margin: 0 auto 1rem;
+      object-fit: contain;
+      @include media('>=desktop-wide') {
+        max-width: 7.8rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+}

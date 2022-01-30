@@ -1,0 +1,110 @@
+@mixin size($a,$b: $a) {
+  width: $a;
+  height: $b;
+}
+
+@mixin hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+@mixin max-width($width) {
+  max-width: calc(#{$width} + (var(--containerPadding) * 2));
+}
+
+@mixin hamburger($width, $height, $lineHeight, $color, $actColor: $color) {
+  display: block;
+  @include size($width, $height);
+  position: relative;
+  transition: opacity $animation-speed;
+
+  &__line {
+    top: calc(50% - (#{$lineHeight} / 3));
+    transform: translateY(50%);
+    transition: background-color 0s linear .13s;
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    top: $lineHeight;
+    transition: top 0.1s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  &::after {
+    top: calc(100% - #{$lineHeight});
+    transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  &__line, &::before, &::after {
+    @include size(100%, #{$lineHeight});
+    display: block;
+    background-color: $color;
+    border-radius: .4rem;
+
+  }
+
+  &.act {
+
+    .hamburger__line {
+      transition-delay: .22s;
+      background-color: transparent;
+    }
+
+    &::before, &::after {
+      top: 0;
+      background-color: $actColor;
+    }
+
+    &::before {
+      transition: top 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.15s, transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+      transform: translate3d(0, #{$width*(1/3)}, 0) rotate(45deg);
+    }
+
+    &::after {
+      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+      transform: translate3d(0, #{$width*(1/3)}, 0) rotate(-45deg);
+    }
+  }
+
+}
+
+@mixin closebtn($size:2rem, $bgColor: black) {
+  @include size($size);
+  position: relative;
+  transition: transform $animation-speed;
+
+  &:hover {
+    transform: scale(1.1) rotateZ(90deg);
+  }
+
+  &::before, &::after {
+    content: '';
+    display: block;
+    @include size(100%, 0.2rem);
+    background-color: $bgColor;
+    border-radius: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+
+  &::after {
+    transform: rotateZ(45deg);
+  }
+
+  &::before {
+    transform: rotateZ(-45deg);
+  }
+}
+
+

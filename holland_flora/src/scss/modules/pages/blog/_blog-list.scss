@@ -1,0 +1,244 @@
+.blog-list {
+  font-family: $font-GillSans;
+  padding: 5rem 0;
+  color: #676666;
+  @include media('>=desktop-wide') {
+    padding: 8rem 0;
+  }
+
+  &__container {
+    padding: 0;
+  }
+
+  &__content {
+    padding: 0 1.5rem;
+    @include media('>=tablet') {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    @include media('>=desktop') {
+      margin: 0 -1rem -2rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 3rem;
+    @include media('>=tablet') {
+      width: calc(100% / 2 - 2rem);
+      margin: 0 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+    }
+    @include media('>=desktop') {
+      width: calc(100% / 3 - 2rem);
+      margin: 0 1rem 5rem;
+    }
+  }
+
+  &__img {
+    margin-bottom: 1.5rem;
+    @include media('<tablet') {
+      height: 25vh;
+      min-height: 13rem;
+      object-fit: cover;
+    }
+    @include media('>=tablet') {
+      margin-top: auto;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 1.42;
+    margin-bottom: .5em;
+  }
+
+  &__date {
+    display: block;
+    font-size: 1.2rem;
+    opacity: .4;
+    margin-bottom: .5em;
+    font-style: italic;
+    @include media('>=tablet') {
+      ont-size: 1.4rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    margin-bottom: .9em;
+    @include media('>=tablet') {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $c-brown03;
+    border-bottom: 2px dashed transparent;
+    width: fit-content;
+    transition: border-color $animation-speed;
+    padding-bottom: 1px;
+    @include media('>=tablet') {
+      font-size: 1.6rem;
+    }
+
+    &:hover {
+      border-color: currentColor;
+    }
+  }
+
+  &-header {
+    margin-bottom: 3rem;
+    @include media('>=tablet') {
+      display: flex;
+    }
+    @include media('>=desktop') {
+      padding: 0 2.5rem;
+      margin-bottom: 5rem;
+    }
+    @include media('>=desktop-wide') {
+      margin-bottom: 7rem;
+    }
+
+    &__content {
+      position: relative;
+    }
+
+    &__col {
+      position: relative;
+      padding: 3rem 1.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: $c-white;
+      height: 50vh;
+      max-height: 56.4rem;
+      min-height: 30rem;
+      &::before {
+        content: '';
+        display: block;
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($c-black, .5);
+      }
+      @include media('<tablet') {
+       &:not(:last-child) {
+         margin-bottom: 2rem;
+       }
+      }
+      @include media('>=tablet') {
+        width: 50%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding: 5rem;
+        &:not(:last-child) {
+          margin-right: 2.5rem;
+        }
+        &:last-child {
+          max-width: 46.4rem;
+        }
+      }
+      @include media('>=desktop-wide') {
+        height: 70vh;
+      }
+    }
+
+    .blog-list__date {
+      opacity: 1;
+    }
+  }
+
+  &-footer {
+    border-top: .5rem solid $c-dark;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    @include media('>=tablet') {
+      display: flex;
+      align-items: flex-start;
+      margin: 3rem -1rem 0;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    @include media('>=desktop') {
+      padding-top: 5.5rem;
+      margin-top: 5.5rem;
+    }
+    @include media('>=desktop-wide') {
+      border-top-width: .8rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      line-height: 1.25;
+      font-weight: 700;
+      @include media('>=tablet') {
+        max-width: 31rem;
+      }
+      @include media('>=desktop') {
+        font-size: 2rem;
+      }
+      @include media('>=desktop-wide') {
+        font-size: 2.4rem;
+      }
+    }
+
+    &__social {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c2c2c;
+      transition: color $animation-speed;
+
+      &-wrap {
+        display: flex;
+        align-items: center;
+      }
+
+      &:hover {
+        color: $c-brown;
+      }
+    }
+
+    &__icon {
+      @include size(2.9rem);
+      fill: $c-brown03;
+      margin-right: 2rem;
+    }
+
+    &__img {
+      width: fit-content;
+      max-height: 45rem;
+      object-fit: contain;
+      margin-top: 1rem;
+      border-radius: 1rem;
+    }
+
+    &__col {
+      @include media('<tablet') {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        &:not(:last-child) {
+          margin-bottom: 1.7rem;
+        }
+      }
+      @include media('>=tablet') {
+        width: calc(100% / 3 - 2rem);
+        margin: 0 1rem;
+      }
+    }
+  }
+
+}

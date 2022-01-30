@@ -1,0 +1,145 @@
+.main-gallery {
+  color: $c-white;
+  background: $c-dark;
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    @include media('>=tablet') {
+      display: flex;
+      align-items: center;
+    }
+    @include media('>=desktop') {
+      padding-top: 10rem;
+      padding-bottom: 7rem;
+    }
+    @include media('>=desktop-wide') {
+      padding-top: 16.5rem;
+    }
+  }
+
+  &__pagination {
+    margin: 0 1rem;
+  }
+
+  &__info {
+    @include media('<tablet') {
+      margin-bottom: 5rem;
+    }
+    @include media('>=tablet') {
+      max-width: 45.4rem;
+      width: 45%;
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+    @include media('>=desktop') {
+      margin-right: 3rem;
+    }
+  }
+
+  &-swiper {
+    position: relative;
+    z-index: 2;
+    @include media('>=tablet') {
+      flex-grow: 1;
+      max-width: 98rem;
+    }
+
+    &__action {
+      @include size(18.9rem, 10rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $c-brown;
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%) translateY(50%);
+      @include media('>=tablet') {
+        @include size(24rem, 13rem);
+        align-items: flex-end;
+        justify-content: flex-start;
+        transform: translateX(0) translateY(20%);
+        right: 0;
+        padding-bottom: 2rem;
+        padding-left: 3rem;
+      }
+      @include media('>=desktop') {
+        @include size(42.5rem, 23.4rem);
+        transform: translateX(0) translateY(50%);
+        padding-bottom: 5rem;
+        padding-left: 6rem;
+        right: -6rem;
+        bottom: 4.2rem;
+
+        &::before {
+          content: '';
+          display: block;
+          @include size(100vw, 100%);
+          background: linear-gradient(to bottom, $c-white 30%, #f4f4f4 70%);
+          position: absolute;
+          top: 0;
+          left: 100%;
+        }
+      }
+
+      &-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__content {
+      height: 100%;
+
+      &[data-youtube-src] {
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          &::before {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          @include size(100%);
+          background-color: rgba($c-black, .3);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          @include size(5rem);
+          position: absolute;
+          background: url($imgGen + 'icons/btn-play.png') no-repeat center / contain;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: transform $animation-speed;
+          z-index: 1;
+          @include media('>=tablet') {
+            @include size(9rem);
+          }
+          @include media('>=desktop') {
+            @include size(12rem);
+          }
+        }
+      }
+    }
+
+    &__img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

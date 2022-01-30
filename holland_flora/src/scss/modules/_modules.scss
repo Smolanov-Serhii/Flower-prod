@@ -1,0 +1,34 @@
+// Vendor
+
+// Components
+@import "components/buttons";
+@import "components/animation";
+@import "components/small-blocks";
+@import "components/popups";
+
+// Layouts
+@import "layouts/header";
+@import "layouts/nav";
+@import "layouts/footer";
+
+// Blocks
+@import "blocks/hero";
+@import "blocks/faq";
+@import "blocks/banner-coop";
+@import "blocks/map";
+
+// Pages
+@import "pages/auth";
+@import "pages/profile";
+@import "pages/basket";
+@import "pages/main/main";
+@import "pages/coop";
+@import "pages/about-company";
+@import "pages/service";
+@import "pages/blog/blog";
+@import "pages/products/products";
+@import "pages/contacts";
+@import "pages/policy";
+
+// Vendor
+@import "vendor/swiper";

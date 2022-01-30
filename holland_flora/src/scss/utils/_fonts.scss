@@ -1,0 +1,33 @@
+/*
+100 - thin
+200 - extralight
+300 - light
+400 - normal
+500 - medium
+600 - semibold
+700 - bold
+800 - extrabold
+900 - black
+*/
+
+
+@mixin font-face($font-name, $path, $weight, $style: normal) {
+  @font-face {
+    font-family: $font-name;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src:
+      url('fonts/#{$path}.woff') format('woff');
+  }
+}
+
+@include font-face('Muller','Muller-Light', 300);
+@include font-face('Muller','Muller-Regular', 400);
+@include font-face('Muller','Muller-Bold', 700);
+
+@include font-face('GillSans','GillSans-Book', 400);
+@include font-face('GillSans','GillSans-SemiBold', 600);
+@include font-face('GillSans','GillSans-Bold', 700);
+
+@include font-face('GillSansPro','GillSansPro-Bold', 700);

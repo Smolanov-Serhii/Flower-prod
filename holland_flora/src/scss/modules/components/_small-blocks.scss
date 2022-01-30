@@ -1,0 +1,384 @@
+/*
+1. Hamburger
+2. Breadcrumbs
+3. Lang
+4. Socials
+5. Counter
+6. Pagination
+7. Chat
+*/
+
+// 1. Hamburger
+.hamburger {
+  @include hamburger(3rem, 2rem, .2rem, $c-brown02);
+  z-index: 0;
+  @include media('>=tablet') {
+   display: none;
+  }
+}
+
+// END Hamburger
+
+// 2. Breadcrumbs
+.breadcrumbs {
+  display: none;
+  font-size: 1.4rem;
+  @include media('>=tablet') {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '/';
+        margin: 0 .5em;
+      }
+    }
+
+    &:last-child {
+      pointer-events: none;
+      color: $c-brown03;
+    }
+  }
+}
+
+// END Breadcrumbs
+
+// 3. Lang
+.lang {
+  width: fit-content;
+  max-width: 7rem;
+  color: $c-white;
+  position: relative;
+
+  &.act {
+    .lang__list {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lang__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__current {
+    cursor: pointer;
+    &-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    width: calc(100% + 2rem);
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba($c-black, .7);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    z-index: 6;
+  }
+
+  &__item {
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: .2em;
+    }
+
+    &:hover {
+      color: $c-brown;
+    }
+  }
+
+  &__current {
+    background-color: transparent;
+    color: inherit;
+    max-width: 3rem;
+    padding: 0;
+  }
+
+  &__icon {
+    @include size(1.2rem);
+    margin-left: 1rem;
+    fill: $c-white;
+    transition: transform $animation-speed;
+    flex-shrink: 0;
+  }
+}
+// END Lang
+
+// 4. Socials
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    &:not(:last-child) {
+      margin-right: 3.5rem;
+    }
+
+    &:hover {
+      .socials__icon {
+        fill: $c-white;
+      }
+    }
+  }
+
+  &__icon {
+    @include size(3rem);
+    fill: $c-brown;
+    transition: fill $animation-speed;
+  }
+}
+// END Socials
+
+// 5. Counter
+.counter {
+  width: fit-content;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include media('>=tablet') {
+    width: 100%;
+    max-width: 12rem;
+  }
+
+  &__input {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: rgba($c-black, .5);
+    width: 100%;
+    padding: 0 .1rem;
+    max-width: 5rem;
+    @include media('>=tablet') {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__btn {
+    @include size(2.2rem);
+    border: 1px solid #e8e8e8;
+    position: relative;
+    flex-shrink: 0;
+    @include media('>=tablet') {
+      @include size(3.5rem);
+    }
+
+    &[data-counter-trigger='plus'] {
+      &::before {
+        content: '';
+        @include size(.7rem, .1rem);
+        position: absolute;
+        background-color: $c-brown04;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+
+    &::after {
+      content: '';
+      @include size(.7rem, .1rem);
+      position: absolute;
+      background-color: $c-brown04;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+// END Counter
+
+// 6.Pagination
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #b17e48;
+  line-height: .5;
+  margin: 0 auto;
+  @include media('>=tablet') {
+   max-width: 27rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    @include size(1.3rem);
+
+    &[disabled] {
+      pointer-events: none;
+      svg {
+        fill: #b8b8b8;
+      }
+    }
+
+    &.prev {
+      transform: rotate(90deg);
+      margin-right: 2rem;
+    }
+    &.next {
+      transform: rotate(-90deg);
+      margin-left: 2rem;
+    }
+  }
+
+  &__item {
+    border: 1px solid transparent;
+    padding: .7rem;
+
+    &.act {
+      border-color: #b17e48;
+    }
+  }
+
+  &__arrow {
+    @include size(100%);
+    fill: #b17e48;
+  }
+}
+// END Pagination
+
+// 7. Chat
+.chat {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 4;
+  @include media('>=tablet') {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  &.act {
+    .chat__form {
+      display: block;
+      animation: chatIn .2s;
+    }
+    .chat__btn {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @include size(5.2rem);
+    border-radius: 50%;
+    background-color: $c-brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 13px rgba(0,0,0,0.1), 0 5px 50px rgba(0,0,0,0.2);
+    animation: chatIn .3s;
+  }
+
+  &__icon {
+    @include size(60%);
+    fill: $c-white;
+  }
+
+  &__form {
+    display: none;
+    transform-origin: right bottom;
+    background-color: $c-white;
+    padding: 1.5rem 1.5rem 2rem;
+    border-radius: 2rem;
+    width: calc(100vw - 2rem);
+    max-width: 38rem;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1), 0 5px 50px rgba(0,0,0,0.2);
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    &::before {
+      content: '';
+      @include size(.7rem);
+      border-radius: 50%;
+      background-color: $c-brown;
+      margin-right: 1rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  &__textarea {
+    min-height: 15rem;
+    outline: none;
+    @include media('>=phablet') {
+      min-height: 20rem;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__close {
+    @include size(2rem);
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      @include size(80%, 2px);
+      background-color: $c-brown;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: .8rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba($c-black, .2);
+
+    &::placeholder {
+      color: rgba($c-dark, .5);
+    }
+  }
+
+  &__submit.chat__submit {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 4.5rem;
+  }
+}
+// END Chat

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Магазин</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="keywords" content="">
+  <link rel="shortcut icon" href="assets/images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" type="image/png">
+  <link rel="icon" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon-precomposed" href="assets/images/favicons/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="assets/images/favicons/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="assets/images/favicons/apple-touch-icon-1024x1024.png">
+  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="container header__container">
+      <button class="hamburger" type="button"><span class="hamburger__line"></span></button>
+      <a href="/main.html"><img class="header__logo logo" src="assets/images/common/logo.png" alt="Holland Flora Logo"></a>
+      <div class="header__wrap">
+        <div class="header__row">
+          <div class="header__col"><a class="header__call" href="#">Закзазать звонок</a><a class="header-phone"
+                                                                                           href="tel:+380981234567">
+            <svg class="svg-sprite-icon icon-phone header-phone__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#phone"></use>
+            </svg>
+            +3 (8098) 123 45 67</a></div>
+          <div class="header__col"><a class="header-action" href="/login.html">Войти
+            <svg class="svg-sprite-icon icon-user header-action__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#user"></use>
+            </svg>
+          </a><a class="header-action desktop" href="/basket.html">Корзина
+            <svg class="svg-sprite-icon icon-basket header-action__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#basket"></use>
+            </svg>
+          </a></div>
+          <div class="lang header__lang">
+            <div class="lang__current-wrap">
+              <input class="lang__current" type="text" value="RU" readonly>
+              <svg class="svg-sprite-icon icon-arrow lang__icon">
+                <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+              </svg>
+            </div>
+            <ul class="lang__list">
+              <li class="lang__item">RU</li>
+              <li class="lang__item">UA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__row">
+          <nav class="header-nav"><a class="header-nav__link" href="/main.html">Главная</a><a class="header-nav__link"
+                                                                                              href="/products-list.html">Магазин</a><a
+                  class="header-nav__link" href="/about-company.html">О компани</a><a class="header-nav__link"
+                                                                                      href="/coop.html">Условия
+            сотрудничества</a><a class="header-nav__link" href="/service.html">Доставка и оплата</a><a
+                  class="header-nav__link" href="/blog-list.html">Блог</a><a class="header-nav__link"
+                                                                             href="/contacts.html">Контакты</a></nav>
+        </div>
+      </div>
+      <a class="header-action mobi" href="/basket.html">
+        <svg class="svg-sprite-icon icon-basket header-action__icon">
+          <use xlink:href="assets/images/sprite/sprite.svg#basket"></use>
+        </svg>
+      </a>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container hero__container">
+      <div class="hero__content">
+        <div class="breadcrumbs hero__breadcrumbs"><a class="breadcrumbs__item" href="/main.html">Главная</a><a
+                class="breadcrumbs__item" href="#">Магазин</a>
+        </div>
+        <h1 class="hero__title">Магазин</h1>
+      </div>
+    </div>
+  </section>
+  <main class="products content">
+    <div class="container products__container desktop">
+      <aside class="products-aside">
+        <form class="products-aside-search">
+          <input class="products-aside-search__input" type="text" placeholder="Поиск наименования товара">
+          <button class="products-aside-search__btn" type="button">
+            <svg class="svg-sprite-icon icon-search products-aside-search__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </form>
+        <form class="products-filter mobi">
+          <div class="products-filter__col">
+            <p class="products-filter__label">Цвет:</p>
+            <div class="products-filter-dropdown">
+              <div class="products-filter-dropdown__current-wrap">
+                <input class="products-filter-dropdown__input" type="text" value="Атрацинт" readonly>
+                <svg class="svg-sprite-icon icon-arrow products-filter-dropdown__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <ul class="products-filter-dropdown__list">
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Красный</li>
+                <li class="products-filter-dropdown__item">Белый</li>
+              </ul>
+            </div>
+          </div>
+          <div class="products-filter__col">
+            <p class="products-filter__label">Высота:</p>
+            <div class="products-filter__wrap">
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">От</span>
+                <input class="products-filter__input" type="number">
+              </label>
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">До</span>
+                <input class="products-filter__input" type="number">
+              </label>
+            </div>
+          </div>
+          <div class="products-filter__col">
+            <p class="products-filter__label">Стоимость:</p>
+            <div class="products-filter__wrap">
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">От</span>
+                <input class="products-filter__input" type="number">
+              </label>
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">До</span>
+                <input class="products-filter__input" type="number">
+              </label>
+            </div>
+          </div>
+          <div class="products-filter__col">
+            <p class="products-filter__label">Сортировка:</p>
+            <div class="products-filter-dropdown">
+              <div class="products-filter-dropdown__current-wrap">
+                <input class="products-filter-dropdown__input" type="text" value="В начале дорогие" readonly>
+                <svg class="svg-sprite-icon icon-arrow products-filter-dropdown__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <ul class="products-filter-dropdown__list">
+                <li class="products-filter-dropdown__item">В начале дорогие</li>
+                <li class="products-filter-dropdown__item">В начале дешевые</li>
+                <li class="products-filter-dropdown__item">По алфавиту</li>
+              </ul>
+            </div>
+          </div>
+          <a class="btn--fill products-filter__submit" href="#">Поиск</a>
+        </form>
+        <div class="products-aside__list">
+          <div class="products-aside-accord">
+            <div class="products-aside-accord__header">
+              <p class="products-aside-accord__title">Предложения аукциона</p>
+              <svg class="svg-sprite-icon icon-arrow products-aside-accord__icon">
+                <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+              </svg>
+            </div>
+            <ul class="products-aside-accord__list">
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Роза</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Роза Эквадор</a>
+              </li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Хризантема</a>
+              </li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Гвоздика</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Эутсома /
+                Лизиантус</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Тюльпаны</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Зелень /
+                Листва</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Гортензия /
+                Гидрангея</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Пионы</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Гиацинт /
+                Мускари</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Амариллис</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Альстромерия</a>
+              </li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Гербера</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Астра</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Лилия</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Орхидея /
+                Феленопсис / Цимбидиум</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Ранункулюс /
+                Анеманы</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Каллы / Фрезия</a>
+              </li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Антуриум</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Гипсофила</a></li>
+              <li class="products-aside-accord__item"><a class="products-aside-accord__link" href="#">Прочее...</a></li>
+            </ul>
+          </div>
+          <a class="products-aside__item" href="#">Лучшие цены недели</a><a class="products-aside__item" href="#">Роза
+          Эквадор</a><a class="products-aside__item" href="#">Exclusive</a><a class="products-aside__item" href="#">Окрашенные
+          и Стаб-ные цветы</a><a class="products-aside__item" href="#">Аксессуары, фурнитура, упаковка</a><a
+                class="products-aside__item" href="#">на всякий случай (скроем)</a><a class="products-aside__item"
+                                                                                      href="#">на всякий случай
+          (скроем)</a><a class="products-aside__item" href="#">на всякий случай (скроем)</a><a
+                class="products-aside__item" href="#">на всякий случай (скроем)</a><a class="products-aside__item"
+                                                                                      href="#">на всякий случай
+          (скроем)</a>
+        </div>
+      </aside>
+      <div class="products-inside">
+        <form class="products-filter desktop">
+          <div class="products-filter__col">
+            <p class="products-filter__label">Цвет:</p>
+            <div class="products-filter-dropdown">
+              <div class="products-filter-dropdown__current-wrap">
+                <input class="products-filter-dropdown__input" type="text" value="Атрацинт" readonly>
+                <svg class="svg-sprite-icon icon-arrow products-filter-dropdown__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <ul class="products-filter-dropdown__list">
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Атрацинт</li>
+                <li class="products-filter-dropdown__item">Красный</li>
+                <li class="products-filter-dropdown__item">Белый</li>
+              </ul>
+            </div>
+          </div>
+          <div class="products-filter__col">
+            <p class="products-filter__label">Высота:</p>
+            <div class="products-filter__wrap">
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">От</span>
+                <input class="products-filter__input" type="number">
+              </label>
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">До</span>
+                <input class="products-filter__input" type="number">
+              </label>
+            </div>
+          </div>
+          <div class="products-filter__col">
+            <p class="products-filter__label">Стоимость:</p>
+            <div class="products-filter__wrap">
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">От</span>
+                <input class="products-filter__input" type="number">
+              </label>
+              <label class="products-filter__input-wrap"><span class="products-filter__sublabel">До</span>
+                <input class="products-filter__input" type="number">
+              </label>
+            </div>
+          </div>
+          <div class="products-filter__col">
+            <p class="products-filter__label">Сортировка:</p>
+            <div class="products-filter-dropdown">
+              <div class="products-filter-dropdown__current-wrap">
+                <input class="products-filter-dropdown__input" type="text" value="В начале дорогие" readonly>
+                <svg class="svg-sprite-icon icon-arrow products-filter-dropdown__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+                </svg>
+              </div>
+              <ul class="products-filter-dropdown__list">
+                <li class="products-filter-dropdown__item">В начале дорогие</li>
+                <li class="products-filter-dropdown__item">В начале дешевые</li>
+                <li class="products-filter-dropdown__item">По алфавиту</li>
+              </ul>
+            </div>
+          </div>
+          <a class="btn--fill products-filter__submit" href="#">Поиск</a>
+        </form>
+        <div class="products-inside__list">
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+          <div class="products-inside__item">
+            <div class="products-inside__img-wrap" data-popup-trigger="popupProduct"><img class="products-inside__img"
+                                                                                          src="assets/images/content/products/item23.jpg"
+                                                                                          alt="">
+              <div class="products-inside__loupe">
+                <svg class="svg-sprite-icon icon-zoom products-inside__icon">
+                  <use xlink:href="assets/images/sprite/sprite.svg#zoom"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="products-inside__content">
+              <h3 class="products-inside__name">Название товара</h3>
+              <p class="products-inside__option">Минимальное кол-во: <strong class="js-counterMinValue">10</strong></p>
+              <p class="products-inside__option">Цвет: <strong>оттенок фиолетового</strong></p>
+              <p class="products-inside__option">Высота: <strong>35 см</strong></p>
+              <div class="products-inside__wrap">
+                <div class="products-inside__col">
+                  <p class="products-inside__price">25 грн./шт.</p>
+                  <p class="products-inside__ppc">250 грн./лот.</p>
+                </div>
+                <div class="counter" data-min-value="10">
+                  <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+                  <input class="counter__input" type="number" value="10" readonly>
+                  <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+                </div>
+              </div>
+              <a class="btn--border products-inside__btn" href="#">Добавить в корзину</a>
+            </div>
+          </div>
+        </div>
+        <div class="products-inside__pagination">
+          <div class="pagination">
+            <button class="pagination__btn prev" type="button" disabled>
+              <svg class="svg-sprite-icon icon-arrow pagination__arrow">
+                <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="pagination__list"><a class="pagination__item act" href="#">1</a><a class="pagination__item"
+                                                                                           href="#">2</a><a
+                    class="pagination__item" href="#">3</a><a class="pagination__item" href="#">...</a><a
+                    class="pagination__item" href="#">12</a></div>
+            <button class="pagination__btn next" type="button">
+              <svg class="svg-sprite-icon icon-arrow pagination__arrow">
+                <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="products-inside-view">
+            <div class="products-inside-view__current-wrap">
+              <input class="products-inside-view__input" type="text" value="Показать по 24 товра на странице" readonly>
+              <svg class="svg-sprite-icon icon-arrow products-inside-view__icon">
+                <use xlink:href="assets/images/sprite/sprite.svg#arrow"></use>
+              </svg>
+            </div>
+            <ul class="products-inside-view__list">
+              <li class="products-inside-view__item">Показать по 24 товра на странице</li>
+              <li class="products-inside-view__item">Показать по 48 товра на странице</li>
+              <li class="products-inside-view__item">Показать по 72 товра на странице</li>
+              <li class="products-inside-view__item">Показать по 96 товра на странице</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-product" data-popup-content="popupProduct">
+      <div class="popup__container popup-product__container"><img class="popup-product__img"
+                                                                  src="assets/images/common/product-present.jpg" alt="">
+        <div class="popup-product__content">
+          <button class="popup__close popup-product__close" type="button"></button>
+          <p class="popup-product__title">Название товара</p>
+          <div class="popup-product__values">
+            <p class="popup-product__row"><span class="popup-product__option">Минимальное кол-во:</span><span
+                    class="popup-product__value"><span class="js-counterMinValue">10 </span>шт.</span></p>
+            <p class="popup-product__row"><span class="popup-product__option">Цвет:</span><span
+                    class="popup-product__value">Атрацинт</span></p>
+            <p class="popup-product__row"><span class="popup-product__option">Высота:</span><span
+                    class="popup-product__value">35 см</span></p>
+          </div>
+          <p class="popup-product__price"><span class="popup-product__price-item">22грн/шт.</span><span
+                  class="popup-product__price-item">440грн/лот</span></p>
+          <div class="popup-product__wrap">
+            <div class="counter" data-min-value="10">
+              <button class="counter__btn" type="button" data-counter-trigger="minus"></button>
+              <input class="counter__input" type="number" value="10" readonly>
+              <button class="counter__btn" type="button" data-counter-trigger="plus"></button>
+            </div>
+            <a class="btn--fill popup-product__btn" href="#">Добавить в корзину</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container"><a class="footer-phone mobi" href="tel:+380981234567">
+      <svg class="svg-sprite-icon icon-phone footer-phone__icon">
+        <use xlink:href="assets/images/sprite/sprite.svg#phone"></use>
+      </svg>
+      +3 (8098) 123 45 67</a><a class="footer__call mobi" href="#">Закзазать звонок</a><a href="/main.html"><img
+            class="footer__logo logo" src="assets/images/common/logo.png" alt="Holland Flora Logo"></a>
+      <div class="footer__wrap">
+        <nav class="footer-nav"><a class="footer-nav__link" href="/main.html">Главная</a><a class="footer-nav__link"
+                                                                                            href="/products-list.html">Магазин</a><a
+                class="footer-nav__link" href="/about-company.html">О компани</a><a class="footer-nav__link"
+                                                                                    href="/coop.html">Условия
+          сотрудничества</a><a class="footer-nav__link" href="/service.html">Доставка и оплата</a><a
+                class="footer-nav__link" href="/blog-list.html">Блог</a><a class="footer-nav__link"
+                                                                           href="/contacts.html">Контакты</a></nav>
+        <div class="footer__row"><a class="footer-phone desktop" href="tel:+380981234567">
+          <svg class="svg-sprite-icon icon-phone footer-phone__icon">
+            <use xlink:href="assets/images/sprite/sprite.svg#phone"></use>
+          </svg>
+          +3 (8098) 123 45 67</a><a class="footer__call desktop" href="#">Закзазать звонок</a>
+          <div class="socials footer__socials"><a class="socials__link"
+                                                  href="https://www.instagram.com/hollandflora.com.ua/" target="_blank">
+            <svg class="svg-sprite-icon icon-insta socials__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#insta"></use>
+            </svg>
+          </a><a class="socials__link" href="https://www.facebook.com/hollandflora.com.ua/" target="blank">
+            <svg class="svg-sprite-icon icon-facebook socials__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#facebook"></use>
+            </svg>
+          </a><a class="socials__link" href="https://www.youtube.com/channel/UCrp4gSSwRSk9aHSKvSMOchg" target="_blank">
+            <svg class="svg-sprite-icon icon-youtube socials__icon">
+              <use xlink:href="assets/images/sprite/sprite.svg#youtube"></use>
+            </svg>
+          </a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="chat">
+    <button class="chat__btn" type="button">
+      <svg class="svg-sprite-icon icon-chat chat__icon">
+        <use xlink:href="assets/images/sprite/sprite.svg#chat"></use>
+      </svg>
+    </button>
+    <form class="chat__form">
+      <div class="chat__header">
+        <h3 class="chat__title">Поддержка</h3>
+        <button class="chat__close" type="button"></button>
+      </div>
+      <input class="chat__input" type="text" name="name" placeholder="Ваше имя">
+      <input class="chat__input" type="email" name="email" placeholder="Ваш Email">
+      <textarea class="chat__input chat__textarea" placeholder="Ваше сообщение"></textarea>
+      <button class="btn--fill chat__submit" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+<script src="assets/scripts/main.js"></script>
+</body>
+</html>

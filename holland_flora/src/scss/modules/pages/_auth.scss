@@ -1,0 +1,226 @@
+.auth {
+  font-size: 1.6rem;
+  color: $c-black;
+  padding: 5rem 0;
+  @include media('>=desktop-wide') {
+    font-size: 1.8rem;
+    padding: 8rem 0;
+  }
+
+  &__container {
+    @include max-width(47rem)
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1em;
+    @include media('>=tablet') {
+      font-size: 2.7rem;
+    }
+    @include media('>=desktop') {
+      font-size: 3rem;
+    }
+    @include media('>=desktop-wide') {
+      font-size: 3.6rem;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.9rem;
+    padding: 1rem 1.3rem;
+    border: 1px solid $c-grey;
+    @include media('>=tablet') {
+      padding: 1.1rem 2rem;
+    }
+
+    &::placeholder {
+      opacity: .5;
+    }
+  }
+
+  &__login {
+    font-size: 1.4rem;
+    opacity: 0.5;
+    text-align: center;
+  }
+
+  &__submit {
+    margin-bottom: 1.9rem;
+    position: relative;
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: .6;
+
+      &::before {
+        content: attr(data-error-msg);
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1;
+        margin-bottom: .2em;
+        color: red;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        opacity: 1;
+        @include media('>=tablet') {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    @include media('>=desktop') {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4.3rem;
+  }
+
+  &__btn {
+    width: 48%;
+  }
+
+  &-dropdown {
+    margin-bottom: 1.9rem;
+    position: relative;
+
+    &.act {
+
+      .auth-dropdown__list {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .auth-dropdown__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__current {
+      flex-grow: 1;
+      pointer-events: none;
+
+      &::placeholder {
+        opacity: .5;
+      }
+
+      &-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.3rem;
+        border: 1px solid $c-grey;
+        cursor: pointer;
+        position: relative;
+        background-color: $c-white;
+        z-index: 2;
+        @include media('>=tablet') {
+          @include media('>=tablet') {
+            padding: 1.1rem 2rem;
+          }
+        }
+      }
+    }
+
+    &__list {
+      padding: 1rem 1.3rem;
+      border: 1px solid $c-grey;
+      border-top: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: $c-white;
+      width: 100%;
+      z-index: 1;
+      transform: translateY(-2rem);
+      transition: transform $animation-speed, visibility $animation-speed, opacity $animation-speed;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &__item {
+      cursor: pointer;
+
+      &:hover {
+        color: $c-brown;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: .3em;
+      }
+    }
+
+    &__icon {
+      @include size(1.4rem);
+      fill: $c-brown03;
+      transition: transform $animation-speed;
+    }
+  }
+
+  &-checkbox {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: rgba($c-black, .5);
+    cursor: pointer;
+    margin-bottom: 2.5rem;
+    padding-left: .3rem;
+
+    &__input {
+      @include hidden;
+
+      &:active + .auth-checkbox__label::before {
+        transform: scale(0.5);
+      }
+
+      &:checked + .auth-checkbox__label::before {
+        background-color: #c17f48;
+      }
+
+      &--policy {
+        &:not(:checked) ~ .auth__submit {
+          color: red;
+        }
+      }
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        @include size(1.2rem);
+        margin-right: 1.2rem;
+        background-color: transparent;
+        outline: 1px solid $c-grey;
+        outline-offset: .3rem;
+        transition: transform $animation-speed;
+      }
+    }
+
+    &__link {
+      color: $c-brown;
+      margin: 0 .2em;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

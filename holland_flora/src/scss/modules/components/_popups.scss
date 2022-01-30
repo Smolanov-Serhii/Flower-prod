@@ -1,0 +1,467 @@
+$popupSpeed: .5s ease;
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba($c-black, 0);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: background-color .4s ease;
+  opacity: 0;
+  z-index: 100;
+  visibility: hidden;
+
+  &.act {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba($c-black, 0.5);
+
+    .popup__container {
+      animation: fadeInDown $popupSpeed;
+    }
+  }
+
+  &.closing {
+    .popup__container {
+      animation: fadeOutUp $popupSpeed;
+    }
+  }
+
+  &__close {
+    @include closebtn();
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 70rem;
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+
+  &-video {
+    &__container {
+      max-width: 100%;
+      position: relative;
+      width: 100%;
+      height: 20rem;
+      padding: 0;
+      max-height: 90%;
+      @include media('>=phone-wide','<tablet') {
+        height: 35rem;
+      }
+      @include media('>=tablet','<desktop') {
+        height: 50rem;
+      }
+      @include media('>=desktop','<desktop-wide') {
+        @include size(95rem, 60rem);
+      }
+      @include media('>=desktop-wide') {
+        @include size(140rem, 80rem);
+      }
+    }
+
+    &__close {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      transform: translateY(-50%);
+
+      &:hover {
+        transform: scale(1.1) rotateZ(90deg) translateX(-50%);
+      }
+
+      &::before, &::after {
+        background-color: $c-white;
+      }
+    }
+
+    &__iframe {
+      display: block;
+      border: none;
+      margin: 0 auto;
+      @include size(100%);
+    }
+
+  }
+
+  &-product {
+
+    &__container {
+      width: 100%;
+      background-color: $c-white;
+      max-width: 50rem;
+      padding: 0;
+      border-radius: 0;
+      position: relative;
+      @include media('>=tablet') {
+        display: flex;
+        max-width: 100rem;
+      }
+    }
+
+    &__title {
+    }
+
+    &__code {
+      font-size: 1.4rem;
+      color: $c-grey02;
+      margin-bottom: 1em;
+    }
+
+    &__wrap {
+      @include media('>=tablet') {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .counter {
+        @include media('<tablet') {
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    &__row {
+      line-height: .8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 40rem;
+      color: $c-grey02;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+
+    &__btn.popup-product__btn {
+      max-width: 25rem;
+      line-height: 5rem;
+      @include media('<tablet') {
+        margin-top: 1rem;
+      }
+      @include media('>=tablet') {
+        flex-grow: 1;
+        margin-left: 2rem;
+      }
+    }
+
+    &__option {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-grow: 1;
+
+      &::after {
+        content: '';
+        @include size(100%, 1px);
+        background-color: rgba($c-grey02, .7);
+        flex-grow: 1;
+        margin: 0 .2em;
+        align-self: flex-end;
+      }
+    }
+
+    &__price {
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 1em;
+      margin-top: .7em;
+      @include media('>=tablet') {
+        font-size: 2.4rem;
+      }
+      @include media('>=desktop') {
+        font-size: 3rem;
+      }
+
+      &-item {
+        &:not(:last-of-type) {
+          &::after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            @include size(1px, 80%);
+            background-color: $c-grey02;
+            margin: 0 .3em;
+            flex-shrink: 0;
+          }
+        }
+
+        &:last-of-type {
+          font-size: 1.4rem;
+          color: $c-grey02;
+          @include media('>=tablet') {
+            font-size: 1.8rem;
+          }
+          @include media('>=desktop') {
+            font-size: 2.2rem;
+          }
+
+
+        }
+      }
+    }
+
+    &__values {
+      margin-bottom: 1.2em;
+      @include media('>=tablet') {
+        margin: auto 0;
+      }
+    }
+
+    &__content {
+      padding: 1rem 2rem;
+      @include media('>=tablet') {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 6rem;
+      }
+      @include media('>=desktop') {
+        padding: 2rem 4rem 6rem;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: .7em;
+      @include media('>=tablet') {
+        padding-top: 2.5rem;
+        font-size: 2.4rem;
+      }
+      @include media('>=desktop') {
+        font-size: 3rem;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      @include media('>=desktop') {
+        top: 2rem;
+        right: 2rem;
+      }
+
+      &::before, &::after {
+        background-color: $c-brown;
+      }
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      max-height: 50rem;
+      object-fit: contain;
+      @include media('<tablet') {
+        max-height: 30rem;
+      }
+      @include media('>=tablet') {
+        width: 50%;
+      }
+    }
+  }
+
+  &-attention {
+
+    &__container {
+      background-color: $c-white;
+      @include media('>=tablet') {
+        padding: 4rem 3rem;
+      }
+    }
+
+    &__text {
+      margin-bottom: 2em;
+    }
+
+    &__submit {
+      width: 100%;
+      height: auto;
+      max-width: 20rem;
+      margin: 0 auto;
+      transition: background-color $animation-speed, color $animation-speed;
+      text-transform: uppercase;
+
+      &:hover {
+        transform: none;
+      }
+
+      &::after, &::before {
+        display: none;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      text-align: center;
+      color: $c-brown;
+      margin-bottom: .5em;
+      text-transform: uppercase;
+      @include media('>=tablet') {
+        font-size: 2.4rem;
+      }
+      @include media('>=desktop') {
+        font-size: 3rem;
+      }
+    }
+
+    &__close {
+      display: block;
+      margin-left: auto;
+
+      &::before, &::after {
+        background-color: $c-brown;
+      }
+    }
+  }
+
+  &-status {
+    text-align: center;
+
+    &__container {
+      background-color: $c-white;
+      max-width: 58rem;
+      border-radius: 0;
+      @include media('>=tablet') {
+        padding: 4rem 2rem;
+      }
+    }
+
+    &__id {
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    &__submit {
+      width: 100%;
+      height: auto;
+      max-width: 20rem;
+      margin: 0 auto;
+      transition: background-color $animation-speed, color $animation-speed;
+      text-transform: uppercase;
+
+      &:hover {
+        transform: none;
+      }
+
+      &::after, &::before {
+        display: none;
+      }
+    }
+
+    &__text {
+      margin-bottom: 2em;
+    }
+
+    &__link {
+      color: $c-brown;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      color: $c-brown;
+      margin-bottom: .5em;
+      @include media('>=tablet') {
+        font-size: 2.4rem;
+      }
+      @include media('>=desktop') {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &-call {
+    text-align: center;
+
+    &__container {
+      background-color: $c-white;
+      max-width: 50rem;
+      border-radius: 1rem;
+      position: relative;
+      @include media('>=tablet') {
+       padding: 4rem;
+      }
+    }
+
+    &__close {
+      display: block;
+      margin-left: auto;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+
+      &::before, &::after {
+        background-color: $c-brown;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: .5em;
+      color: $c-brown;
+      @include media('>=tablet') {
+        font-size: 2.2rem;
+      }
+      @include media('>=desktop') {
+        font-size: 2.8rem;
+      }
+    }
+
+    &__text {
+      margin-bottom: 1em;
+    }
+
+    &__wrap {
+      padding: .5rem 0;
+      display: flex;
+      white-space: nowrap;
+      align-items: center;
+
+      &:last-of-type {
+        margin-bottom: 1em;
+      }
+
+      @include media('>=tablet') {
+        padding: 1rem 0;
+      }
+    }
+
+    &__label {
+      width: 20%;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    &__input {
+      width: 100%;
+      flex-grow: 1;
+      padding: 1rem 2rem;
+      border-radius: .6rem;
+      border: 1px solid rgba($c-dark, .5);
+    }
+
+    &__btn.popup-call__btn {
+      width: 70%;
+      max-width: 25rem;
+      margin: 0 auto;
+      line-height: 4rem;
+    }
+
+  }
+}
+
