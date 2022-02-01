@@ -11,6 +11,7 @@ if (empty($user) || empty($user->ID)) {
 }
 $info = get_user_meta($user->ID, Auth::USER_META_KEY, true);
 
+
 $args = array(
   'author' => $user->ID,
   'orderby' => 'post_date',
@@ -33,7 +34,6 @@ get_header(); ?>
         <li class="profile-aside__item act" data-tab-trigger="profileInfo"><?php pll_e('Личные данные'); ?></li>
       </ul>
     </aside>
-
     <div class="profile__content" data-tab-content="profileOrders">
       <table class="profile-order">
         <thead>

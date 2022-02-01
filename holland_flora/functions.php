@@ -223,4 +223,26 @@ wp_clear_scheduled_hook('wp_version_check');
 remove_action( 'load-update-core.php', 'wp_update_plugins' );
 add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
 wp_clear_scheduled_hook( 'wp_update_plugins' );
+$user_id = get_current_user_id();
+function register_custom_user_column($columns) {
+  $columns['customer_since'] = 'Контакты';
+  return $columns;
+}
+function register_custom_user_column_view($value, $column_name, $user_id) {
+  $user_info = get_userdata( $user_id );
+  $tel = get_user_meta( $user_id );
+
+  $phone = unserialize($tel['info'][0])['tel'];
+  $name = unserialize($tel['info'][0])['full_name'];
+  $company = unserialize($tel['info'][0])['company'];
+  $business = unserialize($tel['info'][0])['business'];
+  $country = unserialize($tel['info'][0])['country'];
+  $address = unserialize($tel['info'][0])['address'];
+  $data = "<span>" . $phone . "</span><br>" . "<span>" . $name . "</span><br>" . "<span>" . $company . "</span><br>" . "<span>" . $business . "</span><br>" . "<span>" . $country . "</span><br>" . "<span>" . $address . "</span><br>";
+  if($column_name == 'customer_since') return $data;
+  return $value;
+
+}
+add_action('manage_users_columns', 'register_custom_user_column');
+add_action('manage_users_custom_column', 'register_custom_user_column_view', 10, 3);
 
